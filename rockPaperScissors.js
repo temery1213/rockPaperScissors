@@ -18,11 +18,46 @@ function getPlayerChoice() {
     return playerChoice
 }
 
-function playRound(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection) {
+    let player = playerSelection;
+    let computer = computerSelection;
+    let winner;
+  
+    if (playerSelection === "rock") {
+      if (computerSelection === "paper") {
+        winner = computer;
+      } else if (computerSelection === "scissors") {
+        winner = player;
+      } else {
+        // It's a tie
+        winner = "tie";
+      }
+    } else if (playerSelection === "paper") {
+      if (computerSelection === "rock") {
+        winner = player;
+      } else if (computerSelection === "scissors") {
+        winner = computer;
+      } else {
+        // It's a tie
+        winner = "tie";
+      }
+    } else if (playerSelection === "scissors") {
+      if (computerSelection === "rock") {
+        winner = computer;
+      } else if (computerSelection === "paper") {
+        winner = player;
+      } else {
+        // It's a tie
+        winner = "tie";
+      }
+    } else {
+      // Invalid input, handle the error or tie as you see fit.
+      winner = "invalid";
+    }
+  
+    return winner;
+  }
 
-}
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
 
 // count rounds //
 
